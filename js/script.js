@@ -5,6 +5,13 @@ var cat = document.querySelector(".cat");
 
 // Adding event listener and event handler for button to listen for a click event
 button.addEventListener("click", function() {
-    // Adding the show class
-    cat.classList.add("show");
-});
+    if (cat.classList.contains("show")) {
+        cat.classList.remove("show");
+        button.innerText = "Wait, come back!";
+        button.classList.add("disappear");
+    } else {
+        cat.classList.add("show");
+        button.innerText = "Shoo, cat!";
+        button.classList.remove("disappear");
+    }
+}); 
